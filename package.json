@@ -1,0 +1,16 @@
+{
+  "name": "safe-collection-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:zehenrique0822/safe-collection-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
