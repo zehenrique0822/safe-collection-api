@@ -1,8 +1,8 @@
 import 'reflect-metadata'
+import { AppDataSource } from './database'
 import express from 'express'
 import routes from './routes'
 import cors from 'cors'
-import { AppDataSource } from './database/index'
 
 AppDataSource.initialize()
   .then(async () => {
