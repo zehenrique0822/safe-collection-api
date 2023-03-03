@@ -26,12 +26,12 @@ export class CreateTablePoints1677722016489 implements MigrationInterface {
         },
         {
           name: "latitude",
-          type: "float",
+          type: "double precision",
           isNullable: false
         },
         {
           name: "longitude",
-          type: "float",
+          type: "double precision",
           isNullable: false
         },
         {

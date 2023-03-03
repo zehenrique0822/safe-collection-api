@@ -7,7 +7,7 @@ class Collections {
   @PrimaryGeneratedColumn()
     id: number
 
-  @Column('timestamp without time zone')
+  @Column()
     date_collect: Date
 
   @Column('decimal', { precision: 20, scale: 5 })
@@ -21,11 +21,11 @@ class Collections {
   @JoinColumn({ name: 'id_parameters' })
     parameter: Parameters
 
-  @Column('timestamp without time zone', { default: () => 'now()' })
+  @Column()
     created_at: Date
 
-  @Column('timestamp without time zone', { default: () => 'now()', onUpdate: 'now()' })
-    updated_at: Date
+  @Column()
+    update_at: Date
 }
 
 export default Collections
