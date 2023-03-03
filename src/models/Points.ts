@@ -12,10 +12,10 @@ class Points {
   @Column()
     address: string
 
-  @Column()
+  @Column('double precision', { precision: 18, scale: 15 })
     latitude: number
 
-  @Column()
+  @Column('double precision', { precision: 18, scale: 15 })
     longitude: number
 
   @Column()
