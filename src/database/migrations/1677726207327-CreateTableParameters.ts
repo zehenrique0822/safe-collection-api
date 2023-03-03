@@ -27,9 +27,7 @@ export class CreateTableParameters1677726207327 implements MigrationInterface {
           },
           {
             name: "limit",
-            type: "decimal",
-            precision: 20,
-            scale: 5,
+            type: "double precision",
             isNullable: false
           },
           {

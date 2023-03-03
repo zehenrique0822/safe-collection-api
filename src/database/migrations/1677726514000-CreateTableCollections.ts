@@ -24,9 +24,7 @@ export class CreateTableCollections1677726514000 implements MigrationInterface {
         },
         {
           name: "value",
-          type: "decimal",
-          precision: 20,
-          scale: 5,
+          type: "double precision",
           isNullable: false
         },
         {

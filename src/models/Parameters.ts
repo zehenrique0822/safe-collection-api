@@ -9,11 +9,11 @@ class Parameters {
   @Column()
     name: string
 
-  @Column({ type: 'decimal', precision: 20, scale: 5 })
-    valor: number
-
   @Column()
-    date_collect: Date
+    unit: string
+
+  @Column('double precision', { precision: 18, scale: 15 })
+    limit: number
 
   @Column()
     created_at: Date

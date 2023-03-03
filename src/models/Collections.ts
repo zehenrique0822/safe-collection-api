@@ -8,24 +8,30 @@ class Collections {
     id: number
 
   @Column()
-    date_collect: Date
+    id_parameters: number
 
-  @Column('decimal', { precision: 20, scale: 5 })
+  @Column()
+    id_points: number
+
+  @Column('double precision', { precision: 18, scale: 15 })
     value: number
 
-  @ManyToOne(() => Points, point => point.collections)
-  @JoinColumn({ name: 'id_points' })
-    point: Points
-
-  @ManyToOne(() => Parameters, parameter => parameter.collections)
-  @JoinColumn({ name: 'id_parameters' })
-    parameter: Parameters
+  @Column()
+    date_collect: Date
 
   @Column()
     created_at: Date
 
   @Column()
     updated_at: Date
+
+  @ManyToOne(() => Parameters, parameter => parameter.collections)
+  @JoinColumn({ name: 'id_parameters' })
+    parameter: Parameters
+
+  @ManyToOne(() => Points, point => point.collections)
+  @JoinColumn({ name: 'id_points' })
+    point: Points
 }
 
 export default Collections
