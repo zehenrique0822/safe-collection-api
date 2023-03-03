@@ -13,16 +13,15 @@ class CreatePointsUseCase {
   ) {}
 
   async execute ({ name, address, latitude, longitude }: ICreatePointRequestDTO): Promise<Points> {
-    const foundPoint = await this.repository.findOne({
-      where: {
-        or: [
-          { name },
-          { latitude, longitude }
-        ]
-      }
-    })
+    const foundPoint = await this.repository.findOne(
+      [
+        { name },
+        { address },
+        { latitude, longitude }
+      ]
+    )
 
-    if (foundPoint) throw new AppError('Ponto com esse nome e/ou latitude e longitude já cadastrado!', 400)
+    if (foundPoint) throw new AppError('Ponto com esse nome, endereço e/ou latitude e longitude já cadastrado!', 400)
 
     const createdPoint = await this.repository.create({
       name,

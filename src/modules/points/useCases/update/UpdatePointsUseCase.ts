@@ -1,5 +1,4 @@
 import { inject, injectable } from 'tsyringe'
-import { Not } from 'typeorm'
 import AppError from '../../../../errors/AppError'
 import type Points from '../../../../models/Points'
 import { IPointsRepository } from '../../repositories/IPointsRepository'
@@ -16,17 +15,18 @@ class UpdatePointsUseCase {
     const foundPoint = await this.repository.findOne({ id })
     if (!foundPoint) throw new AppError('O ponto não existe!', 404)
 
-    const FoundExistitsPoint = await this.repository.find({
-      where: {
-        id: Not(id),
-        or: [
-          { name },
-          { latitude, longitude }
-        ]
-      }
-    })
+    const FoundExistitsPoint = await this.repository.find(
+      [
+        { name },
+        { address },
+        { latitude, longitude }
+      ]
+    )
 
-    if (FoundExistitsPoint?.length) throw new AppError('Este ponto já está cadastrado!', 409)
+    if ((FoundExistitsPoint?.length === 1 && FoundExistitsPoint[0]?.id !== id) ||
+      !FoundExistitsPoint || FoundExistitsPoint?.length > 1) {
+      throw new AppError('Ponto com esse nome, endereço e/ou latitude e longitude já cadastrado!', 409)
+    }
 
     const updatedPoint = await this.repository.update({
       id,
