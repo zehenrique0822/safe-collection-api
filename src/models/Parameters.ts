@@ -19,7 +19,7 @@ class Parameters {
     created_at: Date
 
   @Column()
-    update_at: Date
+    updated_at: Date
 
   @OneToMany(() => Collections, collection => collection.parameter)
     collections: Collections[]

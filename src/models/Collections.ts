@@ -25,7 +25,7 @@ class Collections {
     created_at: Date
 
   @Column()
-    update_at: Date
+    updated_at: Date
 }
 
 export default Collections

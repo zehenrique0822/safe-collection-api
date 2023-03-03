@@ -22,7 +22,7 @@ class Points {
     created_at: Date
 
   @Column()
-    update_at: Date
+    updated_at: Date
 
   @OneToMany(() => Collections, collection => collection.point)
     collections: Collections[]
