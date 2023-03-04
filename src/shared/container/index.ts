@@ -1,4 +1,6 @@
 import { container } from 'tsyringe'
+import { type ICollectionsRepository } from '../../modules/collections/repositories/ICollectionsRepository'
+import { CollectionsRepository } from '../../modules/collections/repositories/implementations/CollectionsRepository'
 import { ParametersRepository } from '../../modules/parameters/repositories/implementations/ParametersRepository'
 import { type IParametersRepository } from '../../modules/parameters/repositories/IParametersRepository'
 import { PointsRepository } from '../../modules/points/repositories/implementations/PointsRepository'
@@ -12,4 +14,9 @@ container.registerSingleton<IPointsRepository>(
 container.registerSingleton<IParametersRepository>(
   'ParametersRepository',
   ParametersRepository
+)
+
+container.registerSingleton<ICollectionsRepository>(
+  'CollectionsRepository',
+  CollectionsRepository
 )
