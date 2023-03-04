@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, UpdateDateColumn } from 'typeorm'
 import Points from './Points'
 import Parameters from './Parameters'
 
@@ -22,7 +22,7 @@ class Collections {
   @Column()
     created_at: Date
 
-  @Column()
+  @UpdateDateColumn()
     updated_at: Date
 
   @ManyToOne(() => Parameters, parameter => parameter.collections)

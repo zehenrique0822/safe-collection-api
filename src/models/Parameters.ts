@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 import Collections from './Collections'
 
 @Entity('parameters')
@@ -18,7 +18,7 @@ class Parameters {
   @Column()
     created_at: Date
 
-  @Column()
+  @UpdateDateColumn()
     updated_at: Date
 
   @OneToMany(() => Collections, collection => collection.parameter)
