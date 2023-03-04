@@ -21,7 +21,7 @@ class CreatePointsUseCase {
       ]
     )
 
-    if (foundPoint) throw new AppError('Ponto com esse nome, endereço e/ou latitude e longitude já cadastrado!', 400)
+    if (foundPoint) throw new AppError('Ponto com esse nome, endereço e/ou latitude e longitude já cadastrado!', 409)
 
     const createdPoint = await this.repository.create({
       name,

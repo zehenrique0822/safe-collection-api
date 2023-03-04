@@ -17,7 +17,7 @@ class DeletePointsUseCase {
     if (foundPoint.collections?.length) {
       throw new AppError(
         `O ponto ${foundPoint.name} não pode ser removido há ${foundPoint.collections?.length} coleta(as) associada(as) a ele!`,
-        501
+        409
       )
     }
 
