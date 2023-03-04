@@ -9,8 +9,8 @@ class ListCollectionsController {
       const { skip, limit } = request.query
 
       const list = await listCollectionsUseCase.execute({
-        skip: Number(skip) ?? 0,
-        limit: Number(limit) ?? 0
+        skip: skip ? Number(skip) : 0,
+        limit: limit ? Number(limit) : 0
       })
 
       if (!list.data?.length) {

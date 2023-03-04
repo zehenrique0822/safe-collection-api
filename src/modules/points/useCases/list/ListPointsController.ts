@@ -9,9 +9,9 @@ class ListPointsController {
       const { search, skip, limit } = request.query
 
       const list = await listPointsUseCase.execute({
-        search: String(search) ?? null,
-        skip: Number(skip) ?? 0,
-        limit: Number(limit) ?? 0
+        search: search ? String(search) : null,
+        skip: skip ? Number(skip) : 0,
+        limit: limit ? Number(limit) : 0
       })
 
       if (!list.data?.length) {

@@ -1,5 +1,5 @@
 export interface IListPointsDTO {
-  search: string
+  search: string | null
   skip: number
   limit: number
 }
