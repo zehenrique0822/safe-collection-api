@@ -49,6 +49,8 @@ class PointsRepository implements IPointsRepository {
 
   async list (pagination: IListPointsDTO): Promise<{ data: Points[], count: number }> {
     const query = this.repository.createQueryBuilder('Points')
+      .leftJoinAndSelect("Points.collections", "collections")
+      .leftJoinAndSelect("collections.parameter", "parameter")
 
     if (pagination.search) {
       query.where(`LOWER(Points.name) LIKE '%${pagination.search.toLowerCase()}%'`)
