@@ -8,10 +8,10 @@ describe('collections update', () => {
 
   it('Should create a point', async () => {
     const request = {
-      name: 'Ponto test',
-      address: 'Tadashi matsumoto ts',
-      latitude: -22.28545454123,
-      longitude: -51.51771154123
+      name: 'Ponto test collections',
+      address: 'Tadashi matsumoto ts collections',
+      latitude: -22.28545454124,
+      longitude: -51.51771154124
     }
     const response = await api.post('/points/new').send(request)
 

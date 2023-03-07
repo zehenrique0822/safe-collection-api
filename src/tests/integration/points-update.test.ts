@@ -32,10 +32,10 @@ describe('points update', () => {
 
   it('Should point update', async () => {
     const request = {
-      name: 'Ponto test 2',
-      address: 'Tadashi matsumoto ts 3',
-      latitude: -22.28545454124,
-      longitude: -51.51771154124
+      name: 'Ponto test 212',
+      address: 'Tadashi matsumoto ts 123',
+      latitude: -22.28545454121,
+      longitude: -51.51771154121
     }
 
     const response = await api.put(`/points/edit/${data.createdPointId}`).send(request)
